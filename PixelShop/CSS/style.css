@@ -1,0 +1,512 @@
+/*home.hmtl*/
+/* Fondo general y color base del texto */
+body {
+    background-color: #191919;
+    color: white;
+    font-family: 'Jersey 10', cursive;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+  
+/* Títulos en rosa */
+h1, h2, h3, h4, h5 {
+    color: #ec0381;
+    margin: 1em 0 0.5em 0;
+}
+  
+/* Enlaces*/
+a {
+    color: white;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: #ec0381;
+    text-decoration: underline;
+}
+  
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+  
+footer a {
+    color: #ec0381;
+    margin: 0 10px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+
+/* Contenedor principal del header */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    gap: 20px;
+}
+
+/* Logo + Buscador */
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+.buscador {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+  
+.buscador input[type="search"] {
+    width: 500px;
+    padding: 10px;
+    font-family: 'Jersey 10', cursive;
+    font-size: 20px;
+    background-color: #ec0381;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+  
+.buscador input::placeholder {
+    color: white;
+}
+  
+.buscador button {
+    padding: 10px 15px;
+    background-color: #ec0381;
+    color: white;
+    border: 2px solid black;
+    font-family: 'Jersey 10', cursive;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*Usuario*/
+.usuario {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Jersey 10', cursive;
+}
+
+.usuario a {
+    color: #ffffff;
+    text-decoration: none;
+}
+  
+.usuario a:hover {
+    color: #ec0381;
+}
+
+.usuario img.icono {
+    width: 30px;  
+    height: auto;
+    margin-right: 8px;  
+    vertical-align: middle;  
+}
+
+/* Barra de menú debajo */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+    border-top: 1px solid #ec0381;
+    border-bottom: 1px solid #ec0381;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+}
+  
+.menu a {
+    color: #ec0381;
+    text-decoration: none;
+    font-size: 35px;
+    font-family: 'Jersey 10', cursive;
+}
+  
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+
+/*CARRUSEL */
+.carrusel {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+
+    background: #191919;
+    background-image:
+        linear-gradient(to right, #191919 35%, #ec0381 45%),       
+        linear-gradient(to right, #191919 35%, #ec0381 45%);       
+    background-repeat: no-repeat;
+    background-size: 100% 171px, 100% ; 
+    background-position: top, bottom; 
+}
+
+.carrusel input[type="radio"] {
+    display: none;
+}
+  
+.slides{
+    display: flex;
+    width: 100%;                 
+    transition: transform 0.6s ease;
+}
+   
+
+.box{
+    flex:0 0 100%;
+    height:500px;               
+    display:flex;
+    justify-content:center;
+    align-items:center;
+          
+}
+  
+.box img{
+    max-width:100%;
+    max-height:100%;                
+    object-fit:contain;  
+    display: block;       
+}
+  
+.dots{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+  
+.dots label{
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ec0381;  
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+
+.dots label:hover,
+#s1:checked ~ .slides {
+  transform: translateX(0%);
+}
+
+#s2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+#s3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+.dots label:hover,
+#s1:checked ~ .inner-carrusel .dots label[for="s1"],
+#s2:checked ~ .inner-carrusel .dots label[for="s2"],
+#s3:checked ~ .inner-carrusel .dots label[for="s3"]{
+  background:#ec0381;
+}
+
+.dots label:hover {
+    background-color: #ec0381;
+} 
+
+/*PRODUCTOS DESTACADOS*/
+.titulo-categoria {
+    font-size: 2.8em;
+    color: #ec0381;
+    margin-bottom: 20px;
+    padding-left: 10px; 
+}
+/* Contenedor de productos */
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+  
+/* Tarjeta individual */
+.tarjeta {
+    background-color: #1f1f1f;
+    border: 2px solid #ec0381;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(236, 3, 129, 0.3);
+    overflow: hidden;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Jersey 10', cursive;
+    color: white;
+}
+  
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 30px rgba(236, 3, 129, 0.6);
+}
+  
+  
+.imagen {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+    border-bottom: 2px solid #ec0381;
+}
+  
+.imagen-container:hover .imagen {
+    transform: scale(1.1);
+}
+  
+.descripcion {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 23px;
+}
+  
+/* Info debajo de la imagen */
+.info {
+    padding: 15px;
+    text-align: center;
+}
+  
+.precio {
+    font-size: 30px;
+    color: #ec0381;
+    margin-bottom: 10px;
+}
+  
+.cantidad {
+    width: 60px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid #ec0381;
+    background-color: #191919;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Jersey 10', cursive;
+    appearance: auto;
+  -moz-appearance: textfield;
+}
+
+.cantidad::-webkit-inner-spin-button,
+.cantidad::-webkit-outer-spin-button {
+  opacity: 1 !important; /* asegura que las flechitas se vean */
+}
+
+.btn-carrito {
+    background-color: #ec0381;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Jersey 10', cursive;
+    transition: background-color 0.3s ease;
+}
+  
+.btn-carrito:hover {
+    background-color: #c0026c;
+}
+
+
+.ver-mas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .ver-mas .btn-ver-mas {
+    background-color: #ec0381;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Jersey 10', cursive;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ver-mas .btn-ver-mas:hover {
+    background-color: #c0026c;
+  }
+
+
+
+/* Estilo del footer */
+.footer img {
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.icono-footer {
+    width: 22px;      
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 5px;
+    object-fit: contain;
+}
+/* Estilo de los enlaces */
+.footer a {
+    color: #ec0381;
+    text-decoration: none;
+    font-size: 18px;
+}
+  
+.footer a:hover {
+    color:  white;
+    text-decoration: underline;
+}
+
+
+
+/*login.html*/
+/* Contenedor principal de la página */
+.login{
+    background-color: #191919;
+    padding: 40px;
+    margin: 40px auto;
+    padding: 30px;
+    width: 400px;
+    border: 2px solid #ec0381;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(236, 3, 129, 0.5);
+}
+
+/*Logo de la página*/
+.logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/*Estilos inputs*/
+form input[type="email"],
+form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #191919;
+    border: 2px solid #ec0381;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Jersey 10', cursive;
+}
+
+form label {
+    font-size: 18px;
+    display: block;
+    text-align: left;
+    margin: 10px auto;
+}
+
+/* Estilos para el checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Botón de login */
+.boton {
+    background-color: #ec0381;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 30px;
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Jersey 10', cursive;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.boton-login:hover {
+    background-color: #c0026c;
+}
+
+/* Títulos principales */
+h1 {
+    color: #ec0381;
+    font-size: 40px; 
+    margin: 1em 0 0.5em 0;
+    font-family: 'Jersey 10', cursive;
+}
+
+/* Subtítulos o textos secundarios */
+h5 {
+    color: #ec0381;
+    margin: 3px 0;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Jersey 10', cursive;
+}
+
+
+/*register.html*/
+/* Contenedor principal de la página */
+.register {
+    background-color: #191919;
+    padding: 30px;
+    margin: 40px auto;
+    width: 400px;
+    border: 2px solid #ec0381;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(236, 3, 129, 0.5);
+}
+
+/* Inputs del formulario */
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="password"],
+.register input[type="date"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #191919;
+    border: 2px solid #ec0381;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Jersey 10', cursive;
+}
+
+/* Título */
+.register h1 {
+    color: #ec0381;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'Jersey 10', cursive;
+}

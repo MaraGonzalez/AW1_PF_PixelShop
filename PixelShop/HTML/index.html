@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Pixel shop</title>
+</head>
+
+<body>
+    <header>
+      <!-- LOGO -->
+      <div class="top">
+        <a href="home.html"><img src="/assets/Logo.png" alt="Pixel Shop" class="logo"></a>
+      
+        <!-- BUSCADOR-->
+        <form action="resultado.html" method="GET" class="buscador">
+          <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
+          <button type="submit">Buscar</button>
+        </form>
+
+        <!-- CARRITO Y USUARIO -->
+        <nav class="usuario">
+          <a href="carrito.html"><img src="/assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+          <a href =""><img src="/assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
+          <a href="login.html"><img src="/assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
+        </nav>
+      </div>
+
+        <!-- BARRA MENU -->
+        <div class="menu">
+          <a href="pcarmadas.html">PC ARMADAS</a>
+          <a href="hardware.html">HARDWARE</a>
+          <a href="perifericos.html">PERIFÉRICOS</a>
+          <a href="consolas.html">CONSOLAS</a>
+        </div>
+    </header>
+        
+      <!-- CARRUSEL //Falta darle forma y movimiento-->
+    <section class="carrusel">
+      <input type="radio" name="slide" id="s1" checked>
+      <input type="radio" name="slide" id="s2">
+      <input type="radio" name="slide" id="s3">
+
+      <div class="slides">
+        <div class= "box"><img src="/assets/Carrusel/Carrusel-1.png" alt="Imagen 1"></div>
+        <div class= "box"><img src="/assets/Carrusel/Carrusel-2.png" alt="Imagen 2"></div>
+        <div class= "box"><img src="/assets/Carrusel/Carrusel-3.png" alt="Imagen 3"></div>
+      </div>
+
+      <div class="dots">
+        <label for="s1"></label>
+        <label for="s2"></label>
+        <label for="s3"></label>
+      </div>      
+    </section>
+
+
+    <!-- TARJETAS DE PRODUCTOS-->
+    <section class="contenedor">
+      <h1 class="titulo-categoria">COMPUTADORAS ARMADAS</h1>      
+      <div class="contenedor-productos">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta">
+          <div class="imagen-container">
+            <img src="/assets/Productos/Computadoras armadas/Ryzen7-5700G-16GB-480GB.png" alt="Ryzen7" class="imagen">
+            <div class="descripcion">AMD Ryzen 7 5700G 16GB 480GB</div>
+          </div>
+          <div class="info">
+            <div class="precio">$412.000,00</div>
+            <input type="number" class="cantidad" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button> <!-- hay que haceerlo funcionar al igual que el resto de los carritos-->
+          </div>
+        </div>
+      
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta">
+          <div class="imagen-container">
+            <img src="/assets/Productos/Computadoras armadas/Ryzen3-5300G-8GB-480GB.png" alt="Ryzen3" class="imagen">
+            <div class="descripcion">AMD Ryzen 3 5300G 8GB 480GB</div>
+          </div>
+          <div class="info">
+            <div class="precio">$315.900,00</div>
+            <input type="number" class="cantidad" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      
+        <!-- Tarjeta 3 -->
+        <div class="tarjeta">
+          <div class="imagen-container">
+            <img src="/assets/Productos/Computadoras armadas/Ryzen7-7700-64GB-2TB.png" alt="Ryzen7-7700" class="imagen">
+            <div class="descripcion">AMD Ryzen 7 7700 64GB 2TB</div>
+          </div>
+          <div class="info">
+            <div class="precio">$1.500.000,00</div>
+            <input type="number" class="cantidad" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      <div class="ver-mas">
+       <a href="pcarmadas.html" class="btn-ver-mas">Ver más</a>
+      </div>
+    </section>
+
+    <section class="contenedor">
+      <h1 class="titulo-categoria"> HARDWARE</h1>
+      <div class="contenedor-productos">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta">
+          <div class="imagen-container">
+            <img src="/assets/Productos/Hardware/Placa-de-video-rtx-3050.png" alt="Placa-de-video-rtx-3050" class="imagen">
+            <div class="descripcion">Placa de video RTX 3050 Ventus 2x Xs 8GB GDDR6</div>
+            </div>
+            <div class="info">
+              <div class="precio">$383.800,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+          
+          <!-- Tarjeta 2 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Hardware/Micro-IntelI9-14900k.png" alt="Micro-IntelI9-14900k" class="imagen">
+              <div class="descripcion">Micro Intel I9-14900k 6ghz 36mb s.1700</div>
+            </div>
+            <div class="info">
+              <div class="precio">$795.700,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 3 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Hardware/Mother-ASUS-PRIME-X870-P-WIFI.png" alt="Mother-ASUS-PRIME-X870-P-WIFI" class="imagen">
+              <div class="descripcion">Mother ASUS PRIME X870-P WIFI DDR5 AM5</div>
+            </div>
+            <div class="info">
+              <div class="precio">$373.000,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class ="ver-mas">
+          <a href="hardware.html" class="btn-ver-mas">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor">
+      <h1 class="titulo-categoria">PERIFÉRICOS</h1>
+      <div class="contenedor-productos">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta">
+          <div class="imagen-container">
+            <img src="/assets/Productos/Periféricos/Auriculares-Logitech-G432.png" alt="Auriculares-Logitech-G432" class="imagen">
+            <div class="descripcion">Auriculares Logitech G432 Gaming 7.1 USB</div>
+            </div>
+            <div class="info">
+              <div class="precio">$107.050,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 2 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Periféricos/Mouse-Redragon-STORM-PRO-M808-KS.png" alt="Mouse-Redragon-STORM-PRO-M808-KS" class="imagen">
+              <div class="descripcion">Mouse Redragon STORM PRO M808-KS RGB Wireless 2.4Ghz 16K White RGB 96g </div>
+            </div>
+            <div class="info">
+              <div class="precio">$40.350,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 3 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Periféricos/Teclado-Mecanico-Redragon-Kumara-K552.png" alt="Teclado-Mecanico-Redragon-Kumara-K552" class="imagen">
+              <div class="descripcion">Teclado Mecanico Redragon Kumara K552 RGB Outemu Red</div>
+            </div>
+            <div class="info">
+              <div class="precio">$46.300,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class ="ver-mas">
+          <a href="perifericos.html" class="btn-ver-mas">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contenedor">
+      <h1 class="titulo-categoria"> CONSOLAS</h1>
+        <div class="contenedor-productos">
+          <!-- Tarjeta 1 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Consolas/Nintendo-switch-lite-blue.png" alt="Nintendo-switch-lite-blue" class="imagen">
+              <div class="descripcion">Nintendo Lite Switch Lite 32GB Standard Edición BLUE</div>
+            </div>
+            <div class="info">
+              <div class="precio">$311.880,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 2 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Consolas/XBOX-SERIES-X.png" alt="XBOX-SERIES-X" class="imagen">
+              <div class="descripcion">Consola Xbox Series X Edición Digital 1TB SDD Robot BLACK + JOYSTICK</div>
+            </div>
+            <div class="info">
+              <div class="precio">$1.349.999,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 3 -->
+          <div class="tarjeta">
+            <div class="imagen-container">
+              <img src="/assets/Productos/Consolas/PS5-Slim.png" alt="PS5-Slim" class="imagen">
+              <div class="descripcion">Sony Playstation 5 Slim 1TB Digital + JOYSTICK</div>
+            </div>
+            <div class="info">
+              <div class="precio">$1.529.999,00</div>
+              <input type="number" class="cantidad" value="1" min="1">
+              <button class="btn-carrito">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class ="ver-mas">
+          <a href="consolas.html" class="btn-ver-mas">Ver más</a>
+        </div>
+      </div>
+    </section>
+</body>
+
+<footer>
+    <div class="footer">
+      <p>Contacto: 
+        <a href="mailto:pixelshop@email.com"><img src="/assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer">pixelshop@email.com</a> |
+        <a href="https://Whatsapp.com" target="_blank"> <img src="/assets/Iconos/icono-whatsapp.png" alt="WhatsApp" class="icono-footer">Whatsapp</a>
+      <p>Seguinos en 
+        <a href="https://facebook.com" target="_blank"> <img src="/assets/Iconos/icono-facebook.png" alt="Facebook" class="icono-footer">Facebook</a> | 
+        <a href="https://instagram.com" target="_blank"><img src="/assets/Iconos/icono-instagram.png" alt="Instagram" class="icono-footer">Instagram</a>
+        
+      </p>
+      <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</html>
