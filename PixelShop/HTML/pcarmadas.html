@@ -7,41 +7,95 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Pixel shop</title>
 </head>
 
 <body>
-    <header>
-      <!-- LOGO -->
-      <div class="top">
-        <a href="home.html"><img src="/assets/Logo.png" alt="Pixel Shop" class="logo"></a>
-      
-        <!-- BUSCADOR-->
-        <form action="resultado.html" method="GET" class="buscador">
-          <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
-          <button type="submit">Buscar</button>
-        </form>
+  <header>
+    <!-- LOGO -->
+    <div class="top">
+      <a href="index.html"><img src="../assets/LogoIndex.png" alt="Pixel Shop" class="logo"></a>
+     
+      <!-- BUSCADOR-->
+      <form action="resultado.html" method="GET" class="buscador">
+        <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
+        <button type="submit">Buscar</button>
+      </form>
 
-        <!-- CARRITO Y USUARIO -->
-        <nav class="usuario">
-          <a href="carrito.html"><img src="/assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
-          <a href =""><img src="/assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
-          <a href="login.html"><img src="/assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
-        </nav>
-      </div>
+      <!-- CARRITO Y USUARIO -->
+      <nav class="usuario">
+        <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+        <a href =""><img src="../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
+        <a href="login.html"><img src="../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
+      </nav>
+    </div>
 
-        <!-- BARRA MENU -->
-        <div class="menu">
-          <a href="pcarmadas.html">PC ARMADAS</a>
-          <a href="hardware.html">HARDWARE</a>
-          <a href="perifericos.html">PERIFÉRICOS</a>
-          <a href="consolas.html">CONSOLAS</a>
+    <!-- BARRA MENU -->
+    <div class="menu">
+      <a href="pcarmadas.html">COMPUTADORAS ARMADAS</a>
+      <a href="hardware.html">HARDWARE</a>
+      <a href="perifericos.html">PERIFÉRICOS</a>
+      <a href="consolas.html">CONSOLAS</a>
+    </div>
+  </header>
+
+    <!-- Sección: COMPUTADORAS ARMADAS -->
+  <section class="contenedor">
+    <h1 class="titulo-categoria">COMPUTADORAS ARMADAS</h1>
+    <div class="contenedor-productos">
+      <!-- Tarjeta 1 -->
+      <div class="tarjeta">
+        <div class="imagen-container">
+          <img src="../assets/Productos/Computadoras armadas/Ryzen7-5700G-16GB-480GB.png" alt="Ryzen7" class="imagen">
         </div>
-    </header>
+        <div class="card-body">
+          <h5 class="card-title">AMD Ryzen 7 5700G 16GB 480GB</h5>
+          <h6 class="card-subtitle">$412.000,00</h6>
+          <p class="card-text">Potente estación de juego y trabajo, ideal para streamers, diseñadores o gamers exigentes que buscan alto rendimiento gráfico.</p>
+          <div class="producto-footer">
+            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+          
+      <!-- Tarjeta 2 -->
+      <div class="tarjeta">
+        <div class="imagen-container">
+          <img src="../assets/Productos/Computadoras armadas/Ryzen3-5300G-8GB-480GB.png" alt="Ryzen3" class="imagen" >
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">AMD Ryzen 3 5300G 8GB 480GB</h5>
+          <h6 class="card-subtitle">$315.900,00</h6>
+          <p class="card-text">Equipo económico ideal para tareas de oficina, navegación, estudio y uso cotidiano. Cuenta con gráficos integrados para uso liviano.</p>
+          <div class="producto-footer">
+            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 3 -->
+      <div class="tarjeta">
+        <div class="imagen-container">
+          <img src="../assets/Productos/Computadoras armadas/Ryzen7-7700-64GB-2TB.png" alt="Ryzen7" class="imagen">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">AMD Ryzen 7 7700 64GB 2TB</h5>
+          <h6 class="card-subtitle">$1.500.000,00</h6>
+          <p class="card-text">Potente estación de trabajo y gaming de alto nivel. Perfecta para edición, multitarea intensiva y juegos exigentes en alta calidad.</p>
+          <div class="producto-footer">
+            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h1>PC ARMADAS</h1>
+
 
 </body>
 

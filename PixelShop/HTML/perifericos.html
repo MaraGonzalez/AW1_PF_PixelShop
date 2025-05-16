@@ -7,55 +7,107 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Pixel shop</title>
 </head>
 
 <body>
-    <header>
-      <!-- LOGO -->
-      <div class="top">
-        <a href="home.html"><img src="/assets/Logo.png" alt="Pixel Shop" class="logo"></a>
-      
-        <!-- BUSCADOR-->
-        <form action="resultado.html" method="GET" class="buscador">
-          <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
-          <button type="submit">Buscar</button>
-        </form>
+  <header>
+    <!-- LOGO -->
+    <div class="top">
+      <a href="index.html"><img src="../assets/LogoIndex.png" alt="Pixel Shop" class="logo"></a>
+     
+      <!-- BUSCADOR-->
+      <form action="resultado.html" method="GET" class="buscador">
+        <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
+        <button type="submit">Buscar</button>
+      </form>
 
-        <!-- CARRITO Y USUARIO -->
-        <nav class="usuario">
-          <a href="carrito.html"><img src="/assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
-          <a href =""><img src="/assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
-          <a href="login.html"><img src="/assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
-        </nav>
-      </div>
+      <!-- CARRITO Y USUARIO -->
+      <nav class="usuario">
+        <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+        <a href =""><img src="../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
+        <a href="login.html"><img src="../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
+      </nav>
+    </div>
 
-        <!-- BARRA MENU -->
-        <div class="menu">
-          <a href="pcarmadas.html">PC ARMADAS</a>
-          <a href="hardware.html">HARDWARE</a>
-          <a href="perifericos.html">PERIFÉRICOS</a>
-          <a href="consolas.html">CONSOLAS</a>
+    <!-- BARRA MENU -->
+    <div class="menu">
+      <a href="pcarmadas.html">COMPUTADORAS ARMADAS</a>
+      <a href="hardware.html">HARDWARE</a>
+      <a href="perifericos.html">PERIFÉRICOS</a>
+      <a href="consolas.html">CONSOLAS</a>
+    </div>
+  </header>
+
+  <!-- Sección: PERIFÉRICOS -->
+  <section class="contenedor">
+    <h1 class="titulo-categoria">PERIFÉRICOS</h1>
+    <div class="contenedor-productos">
+      <!-- Tarjeta 1 -->
+      <div class="tarjeta">
+        <div class="imagen-container">
+          <img src="../assets/Productos/Periféricos/Auriculares-Logitech-G432.png" alt="Auriculares-Logitech-G432" class="imagen">
         </div>
-    </header>
+        <div class="card-body">
+          <h5 class="card-title">Auriculares Logitech G432 Gaming 7.1 USB</h5>
+          <h6 class="card-subtitle">$107.050,00</h6>
+          <p class="card-text">Auriculares con sonido envolvente 7.1, micrófono ajustable y conexión USB para una experiencia inmersiva en juegos o videollamadas.</p>
+          <div class="producto-footer">
+            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+            <button class="btn-carrito">Agregar al carrito</button>
+          </div>
+        </div>
+      </div> 
+      
+    <!-- Tarjeta 2 -->
+    <div class="tarjeta">
+      <div class="imagen-container">
+        <img src="../assets/Productos/Periféricos/Mouse-Redragon-STORM-PRO-M808-KS.png" alt="Mouse-Redragon-STORM-PRO-M808-KS" class="imagen">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Mouse Redragon STORM PRO M808-KS RGB Wireless 2.4Ghz</h5>
+        <h6 class="card-subtitle">$40.350,00</h6>
+        <p class="card-text">Mouse inalámbrico de alto rendimiento con sensor de 16.000 DPI, RGB personalizable y diseño ergonómico ultraligero.</p>
+        <div class="producto-footer">
+          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+          <button class="btn-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Tarjeta 3 -->
+    <div class="tarjeta">
+      <div class="imagen-container">
+        <img src="../assets/Productos/Periféricos/Teclado-Mecanico-Redragon-Kumara-K552.png" alt="Teclado-Mecanico-Redragon-Kumara-K552" class="imagen">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Teclado Mecanico Redragon Kumara K552 RGB Outemu Red</h5>
+        <h6 class="card-subtitle">$46.300,00</h6>
+        <p class="card-text">Teclado compacto con switches Outemu Red, ideal para gamers y programadores que buscan velocidad, durabilidad y estética RGB.</p>
+        <div class="producto-footer">
+          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
+          <button class="btn-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  
+  </section>
 
-    <h1>PERIFÉRICOS</h1>
-    
 </body>
 
-      <footer>
-        <div class="footer">
-          <p>Contacto: 
-            <a href="mailto:pixelshop@email.com"><img src="/assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer">pixelshop@email.com</a> |
-            <a href="https://Whatsapp.com" target="_blank"> <img src="/assets/Iconos/icono-whatsapp.png" alt="WhatsApp" class="icono-footer">Whatsapp</a>
-          <p>Seguinos en 
-            <a href="https://facebook.com" target="_blank"> <img src="/assets/Iconos/icono-facebook.png" alt="Facebook" class="icono-footer">Facebook</a> | 
-            <a href="https://instagram.com" target="_blank"><img src="/assets/Iconos/icono-instagram.png" alt="Instagram" class="icono-footer">Instagram</a>
-            
-          </p>
-          <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
-        </div>
-      </footer>
-      </html>
+<footer>
+    <div class="footer">
+      <p>Contacto: 
+        <a href="mailto:pixelshop@email.com"><img src="/assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer">pixelshop@email.com</a> |
+        <a href="https://Whatsapp.com" target="_blank"> <img src="/assets/Iconos/icono-whatsapp.png" alt="WhatsApp" class="icono-footer">Whatsapp</a>
+      <p>Seguinos en 
+        <a href="https://facebook.com" target="_blank"> <img src="/assets/Iconos/icono-facebook.png" alt="Facebook" class="icono-footer">Facebook</a> | 
+        <a href="https://instagram.com" target="_blank"><img src="/assets/Iconos/icono-instagram.png" alt="Instagram" class="icono-footer">Instagram</a>
+        
+      </p>
+      <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  </html>
