@@ -3,7 +3,7 @@ function inicializarBotonesAgregar() {
 
   botones.forEach(boton => {
     boton.addEventListener("click", () => {
-      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      const usuario = JSON.parse(sessionStorage.getItem("usuario"));
       if (!usuario) {
         alert("Debes iniciar sesión para agregar productos al carrito.");
         window.location.href = "login.html";
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navUsuario = document.getElementById("usuario-nav");
 
     // Verifica si hay una sesión activa
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
 
     if (usuario) {
       // Si está logueado, mostrar opciones completas
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cerrar sesión
       document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
         e.preventDefault();
-        localStorage.removeItem("usuario");
+        sessionStorage.removeItem("usuario");
         location.reload();
       });
 
