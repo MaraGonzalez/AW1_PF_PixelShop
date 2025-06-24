@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const usuario = JSON.parse(sessionStorage.getItem("usuario"));
       if (!usuario) {
         alert("Debes iniciar sesión para agregar productos al carrito.");
-        window.location.href = "../login.html";
+        window.location.href = `login.html?redirect=${encodeURIComponent(window.location.href)}`;
         return;
       }
 
