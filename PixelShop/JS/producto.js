@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   if (usuario) {
     navUsuario.innerHTML = `
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
       e.preventDefault();
-      sessionStorage.removeItem("usuario");
+      localStorage.removeItem("usuario");
       location.reload();
     });
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (botonAgregar) {
     botonAgregar.addEventListener("click", () => {
-      const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+      const usuario = JSON.parse(localStorage.getItem("usuario"));
       if (!usuario) {
         alert("Debes iniciar sesión para agregar productos al carrito.");
         window.location.href = "../login.html";
