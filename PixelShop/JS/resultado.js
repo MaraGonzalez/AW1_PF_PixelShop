@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }); 
   inicializarBotonesAgregar();
-  inicializarBusqueda();
 }
 });
 
@@ -139,19 +138,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   });
-
-
-
-function inicializarBusqueda() {
-  const barraBusqueda = document.querySelector('.buscador input[type="search"]');
-  
-  if (!barraBusqueda) return;
-
-  barraBusqueda.addEventListener('input', (e) => {
-    // Redirige a resultado.html con el término de búsqueda
-    const termino = e.target.value.trim();
-    if (termino.length > 2) {
-      window.location.href = `resultado.html?q=${encodeURIComponent(termino)}`;
-    }
-  });
-}
