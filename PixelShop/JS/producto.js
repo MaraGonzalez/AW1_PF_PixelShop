@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch("../JSON/productos.json")
+  fetch("/JSON/productos.json")
     .then((res) => res.json())
     .then((productos) => {
       const resultados = [];
