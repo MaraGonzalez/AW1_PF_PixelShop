@@ -29,14 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("contenedorResultados");
   if (contenedor) {
     const params = new URLSearchParams(window.location.search);
-    const busqueda = params.get("q")?.toLowerCase() || "";
+const redirectUrl = params.get("redirect");
 
-    if (!busqueda) {
-      contenedor.innerHTML = "<p>No ingresaste ningún término de búsqueda.</p>";
-      return;
-    }
+if (redirectUrl) {
+  window.location.href = redirectUrl;
+} else {
+  window.location.href = "index.html"; // o página principal
+}
 
-    fetch("/JSON/productos.json")
+fetch("/JSON/productos.json")
       .then(res => res.json())
       .then(productos => {
         const resultados = [];
@@ -95,7 +96,7 @@ function inicializarBotonesAgregar() {
       if (!usuario) {
         e.preventDefault();
         alert("Debes iniciar sesión para agregar productos al carrito.");
-        window.location.href = "/login.html";
+        window.location.href = `login.html?redirect=${encodeURIComponent(window.location.href)}`;
         return;
       }
 
