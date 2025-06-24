@@ -98,7 +98,7 @@ function inicializarBotonesAgregar() {
 }
 
 function handleAgregarCarrito(event) {
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
     if (!usuario) {
         alert("Debes iniciar sesión para agregar productos al carrito.");
         window.location.href = "login.html"; // Redirige a login
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Evento para cerrar sesión
       document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
         e.preventDefault();
-        localStorage.removeItem("usuario"); // quitar usuario de localStorage
+        sessionStorage.removeItem("usuario"); // quitar usuario de sessionStorage
         mostrarMenu(null); // actualizar menú sin recargar
       });
 
@@ -156,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Obtener usuario desde localStorage y mostrar menú
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  // Obtener usuario desde sessionStorage y mostrar menú
+  const usuario = JSON.parse(sessionStorage.getItem("usuario"));
   mostrarMenu(usuario);
 });
 
