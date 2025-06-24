@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="card-body">
           <h5 class="card-title">${pc.nombre}</h5>
-          <h6 class="card-subtitle">$${pc.precio.toeString()}</h6>
+          <h6 class="card-subtitle">$${pc.precio.toLocaleString()}</h6>
           <p class="card-text">${pc.descripcion}</p>
           <div class="producto-footer">
             <input type="number" class="cantidad" value="1" min="1">
