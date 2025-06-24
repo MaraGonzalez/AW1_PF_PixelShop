@@ -66,7 +66,7 @@ function inicializarBotonesAgregar() {
 
   botones.forEach(boton => {
     boton.addEventListener("click", (e) => {
-      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      const usuario = JSON.parse(sessionStorage.getItem("usuario"));
       
       // Si no está logueado, cancelar acción y redirigir
       if (!usuario) {
