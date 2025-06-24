@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="card-body">
           <h5 class="card-title">${pc.nombre}</h5>
-          <h6 class="card-subtitle">$${pc.precio.toLocaleString()}</h6>
+          <h6 class="card-subtitle">$${pc.precio.toeString()}</h6>
           <p class="card-text">${pc.descripcion}</p>
           <div class="producto-footer">
             <input type="number" class="cantidad" value="1" min="1">
@@ -66,13 +66,13 @@ function inicializarBotonesAgregar() {
 
   botones.forEach(boton => {
     boton.addEventListener("click", (e) => {
-      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      const usuario = JSON.parse(sessionStorage.getItem("usuario"));
       
       // Si no está logueado, cancelar acción y redirigir
       if (!usuario) {
         e.preventDefault(); // Evita que ocurra cualquier acción predeterminada
         alert("Debes iniciar sesión para agregar productos al carrito.");
-        window.location.href = "login.html";
+        window.location.href = `login.html?redirect=${encodeURIComponent(window.location.href)}`;
         return;
       }
 
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navUsuario = document.getElementById("usuario-nav");
 
     // Verifica si hay una sesión activa
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
 
     if (usuario) {
       // Si está logueado, mostrar opciones completas
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cerrar sesión
       document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
         e.preventDefault();
-        localStorage.removeItem("usuario");
+        sessionStorage.removeItem("usuario");
         location.reload();
       });
 
