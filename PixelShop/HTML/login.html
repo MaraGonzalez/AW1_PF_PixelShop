@@ -21,15 +21,42 @@
     <h1>Ingresá</h1>
     </header>
 
-    <form action="#" method="post">
+    <form id="login-form">
       <label>Email: <input type="email" name="email" required></label><br><br>
       <label>Contraseña: <input type="password" name="password" required></label><br><br>
-      <label class="checkbox-label"><input type="checkbox" name="check" required>Recordar</label>  
-      <a href="index.html" class="boton">Entrar</a> <!-- momentaneamente tiene el link para ir directo a home-->
+      <label class="checkbox-label">
+        <input type="checkbox" name="check">Recordar
+      </label>  
+      <button type="submit" class="boton">Entrar</button>
     
-      <h5>¿Olvidaste la contraseña?</h5> 
-      <h5>¿No tienes cuenta? <a href="register.html">Regístrate</a></h5>
+      <h3>¿Olvidaste la contraseña?</h3> 
+      <h3>¿No tienes cuenta? <a href="register.html">Regístrate</a></h3>
     </form>
   </div>
+
+ <script>
+   // Seleccionamos el form por id
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evitar que el form se envíe
+
+    const email = this.email.value.trim();
+    const password = this.password.value.trim();
+
+    if (email === "" || password === "") {
+      alert("Por favor completá todos los campos.");
+      return;
+    }
+
+    // Guardar usuario en sessionStorage (simula sesión)
+    sessionStorage.setItem("usuario", JSON.stringify({
+      email: email,
+      nombre: email.split("@")[0]
+    }));
+
+    // Redirigir a index.html
+    window.location.href = "index.html";
+  });
+</script>
+
 </body>
 </html>

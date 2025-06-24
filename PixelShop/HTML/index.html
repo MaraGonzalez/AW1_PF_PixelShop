@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <title>Pixel shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>Pixel shop</title>
 </head>
 
 <body>
@@ -20,18 +20,19 @@
      
       <!-- BUSCADOR-->
       <form action="resultado.html" method="GET" class="buscador">
-        <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
-        <button type="submit">Buscar</button>
+        <input type="search" name="q" placeholder="¿Qué estás buscando?" required />
+        <button type="submit" class="btn-icono">
+          <img src="../assets/Iconos/icono-buscar.png" alt="Buscar">
+        </button>
       </form>
 
       <!-- CARRITO Y USUARIO -->
-      <nav class="usuario">
+      <nav class="usuario" id="usuario-nav">
         <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
         <a href =""><img src="../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
         <a href="login.html"><img src="../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
       </nav>
     </div>
-
     <!-- BARRA MENU -->
     <div class="menu">
       <a href="pcarmadas.html">COMPUTADORAS ARMADAS</a>
@@ -48,265 +49,78 @@
     <input type="radio" name="slide" id="s3">
 
     <div class="slides">
-      <div class= "box"><img src="../assets/Carrusel/Carrusel-1.png" alt="Imagen 1"></div>
-      <div class= "box"><img src="../assets/Carrusel/Carrusel-2.png" alt="Imagen 2"></div>
-      <div class= "box"><img src="../assets/Carrusel/Carrusel-3.png" alt="Imagen 3"></div>
+      <div class= "box">
+        <a href = "../HTML/consolas/nintendo-switch-oled.html">
+          <img src="../assets/Carrusel/Carrusel-1.png" alt="Imagen 1">
+        </a>
+      </div>
+      <div class= "box">
+        <a href = "../HTML/perifericos/auriculares-redragon.html">
+          <img src="../assets/Carrusel/Carrusel-2.png" alt="Imagen 2">
+        </a>
+      </div>  
+      <div class= "box">
+        <a href = "perifericos.html">
+          <img src="../assets/Carrusel/Carrusel-3.png" alt="Imagen 3">
+        </a>
+      </div>
     </div>
 
-    <div class="dots">
+    <div class="dots" id="dots">
       <label for="s1"></label>
       <label for="s2"></label>
       <label for="s3"></label>
     </div>      
+
+    <div class="controles">
+    <button id="prev">&#10094;</button>
+    <button id="next">&#10095;</button>
+  </div>
   </section>
 
   <!-- TARJETAS DE PRODUCTOS-->
   <!-- Sección: COMPUTADORAS ARMADAS -->
   <section class="contenedor">
     <h1 class="titulo-categoria">COMPUTADORAS ARMADAS</h1>
-    <div class="contenedor-productos">
-      <!-- Tarjeta 1 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Computadoras armadas/Ryzen7-5700G-16GB-480GB.png" alt="Ryzen7" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">AMD Ryzen 7 5700G 16GB 480GB</h5>
-          <h6 class="card-subtitle">$412.000,00</h6>
-          <p class="card-text">Potente estación de juego y trabajo, ideal para streamers, diseñadores o gamers exigentes que buscan alto rendimiento gráfico.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-          
-      <!-- Tarjeta 2 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Computadoras armadas/Ryzen3-5300G-8GB-480GB.png" alt="Ryzen3" class="imagen" >
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">AMD Ryzen 3 5300G 8GB 480GB</h5>
-          <h6 class="card-subtitle">$315.900,00</h6>
-          <p class="card-text">Equipo económico ideal para tareas de oficina, navegación, estudio y uso cotidiano. Cuenta con gráficos integrados para uso liviano.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
- 
-      <!-- Tarjeta 3 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Computadoras armadas/Ryzen7-7700-64GB-2TB.png" alt="Ryzen7" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">AMD Ryzen 7 7700 64GB 2TB</h5>
-          <h6 class="card-subtitle">$1.500.000,00</h6>
-          <p class="card-text">Potente estación de trabajo y gaming de alto nivel. Perfecta para edición, multitarea intensiva y juegos exigentes en alta calidad.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ver-mas">
-      <a href="pcarmadas.html" class="btn-ver-mas">Ver más</a>
-    </div>
+    <div id="contenedorComputadoras" class="contenedor-productos"></div>
+    <div class="ver-mas"><a href="pcarmadas.html" class="btn-ver-mas">Ver más</a></div>
   </section>
 
   <!-- Sección: HARDWARE -->
   <section class="contenedor">
     <h1 class="titulo-categoria">HARDWARE</h1>
-      <div class="contenedor-productos">
-      <!-- Producto 1 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Placa-de-video-rtx-3050.png"  alt="RTX-3050" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Placa de video RTX 3050 Ventus 2x Xs 8GB GDDR6</h5>
-          <h6 class="card-subtitle">$383.800,00</h6>
-          <p class="card-text">Ideal para gaming en Full HD, esta GPU ofrece un excelente rendimiento gráfico con arquitectura Ampere y soporte para ray tracing.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div> 
-      </div>
+    <div id="contenedorHardware" class="contenedor-productos"></div>
+    <div class="ver-mas"><a href="hardware.html" class="btn-ver-mas">Ver más</a></div>
+  </section>
 
-      <!-- Producto 2 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Micro-IntelI9-14900k.png" alt="Micro-IntelI9-14900k" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Micro Intel I9-14900k 6ghz 36mb s.1700</h5>
-          <h6 class="card-subtitle">$795.700,00</h6>
-          <p class="card-text">Uno de los procesadores más potentes del mercado, perfecto para tareas de alto rendimiento como gaming, diseño y edición profesional.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div> 
-      </div>
-      
-      
-      
-      <!-- Producto 3 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Mother-ASUS-PRIME-X870-P-WIFI.png" alt="Mother-ASUS-PRIME-X870-P-WIFI" class="imagen">
-        </div> 
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Mother ASUS PRIME X870-P WIFI DDR5 AM5</h5>
-          <h6 class="card-subtitle">$373.000,00</h6>
-          <p class="card-text">Placa base de última generación con soporte para memorias DDR5, socket AM5 y conectividad WiFi integrada para un setup moderno y veloz.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-    
-      <div class="ver-mas">
-        <a href="hardware.html" class="btn-ver-mas">Ver más</a>
-      </div>
-  </section>  
-  
   <!-- Sección: PERIFÉRICOS -->
   <section class="contenedor">
     <h1 class="titulo-categoria">PERIFÉRICOS</h1>
-    <div class="contenedor-productos">
-      <!-- Tarjeta 1 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Periféricos/Auriculares-Logitech-G432.png" alt="Auriculares-Logitech-G432" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Auriculares Logitech G432 Gaming 7.1 USB</h5>
-          <h6 class="card-subtitle">$107.050,00</h6>
-          <p class="card-text">Auriculares con sonido envolvente 7.1, micrófono ajustable y conexión USB para una experiencia inmersiva en juegos o videollamadas.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div> 
-      
-    <!-- Tarjeta 2 -->
-    <div class="tarjeta">
-      <div class="imagen-container">
-        <img src="../assets/Productos/Periféricos/Mouse-Redragon-STORM-PRO-M808-KS.png" alt="Mouse-Redragon-STORM-PRO-M808-KS" class="imagen">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Mouse Redragon STORM PRO M808-KS RGB Wireless 2.4Ghz</h5>
-        <h6 class="card-subtitle">$40.350,00</h6>
-        <p class="card-text">Mouse inalámbrico de alto rendimiento con sensor de 16.000 DPI, RGB personalizable y diseño ergonómico ultraligero.</p>
-        <div class="producto-footer">
-          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-          <button class="btn-carrito">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-      
-    <!-- Tarjeta 3 -->
-    <div class="tarjeta">
-      <div class="imagen-container">
-        <img src="../assets/Productos/Periféricos/Teclado-Mecanico-Redragon-Kumara-K552.png" alt="Teclado-Mecanico-Redragon-Kumara-K552" class="imagen">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Teclado Mecanico Redragon Kumara K552 RGB Outemu Red</h5>
-        <h6 class="card-subtitle">$46.300,00</h6>
-        <p class="card-text">Teclado compacto con switches Outemu Red, ideal para gamers y programadores que buscan velocidad, durabilidad y estética RGB.</p>
-        <div class="producto-footer">
-          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-          <button class="btn-carrito">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class ="ver-mas">
-    <a href="perifericos.html" class="btn-ver-mas">Ver más</a>
-    </div>
+    <div id="contenedorPerifericos" class="contenedor-productos"></div>
+    <div class="ver-mas"><a href="perifericos.html" class="btn-ver-mas">Ver más</a></div>
   </section>
-
 
   <!-- Sección: CONSOLAS -->
   <section class="contenedor">
-    <h1 class="titulo-categoria"> CONSOLAS</h1>
-      <div class="contenedor-productos">
-        <!-- Tarjeta 1 -->
-        <div class="tarjeta">
-          <div class="imagen-container">
-            <img src="../assets/Productos/Consolas/Nintendo-switch-lite-blue.png" alt="Nintendo-switch-lite-blue" class="imagen">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Nintendo Switch Lite 32GB BLUE</h5>
-            <h6 class="card-subtitle">$311.880,00</h6>
-            <p class="card-text">Versión portátil de la Nintendo Switch, ligera y compacta, perfecta para jugar en cualquier lugar con un catálogo amplio de juegos exclusivos. De regalo funda para su transporte.</p>
-            <div class="producto-footer">
-              <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-              <button class="btn-carrito">Agregar al carrito</button>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Tarjeta 2 -->
-        <div class="tarjeta">
-          <div class="imagen-container">
-            <img src="../assets/Productos/Consolas/XBOX-SERIES-X.png" alt="XBOX-SERIES-X" class="imagen">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Xbox Series X Edición Digital 1TB + Joystick</h5>
-            <h6 class="card-subtitle">$1.349.999,00</h6>
-            <p class="card-text">La consola más potente de Xbox, con capacidad para juegos en 4K, tiempos de carga ultra rápidos y gran almacenamiento SSD.</p>
-            <div class="producto-footer">
-              <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-              <button class="btn-carrito">Agregar al carrito</button>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Tarjeta 3 -->
-        <div class="tarjeta">
-          <div class="imagen-container">
-            <img src="../assets/Productos/Consolas/PS5-Slim.png" alt="PS5-Slim" class="imagen">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Sony Playstation 5 Slim 1TB Digital + Joystick</h5>
-            <h6 class="card-subtitle">$1.529.999,00</h6>
-            <p class="card-text">PS5 en su versión digital y slim, con gráficos sorprendentes, tiempos de carga reducidos y acceso total a la biblioteca online de PlayStation.</p>
-            <div class="producto-footer">
-              <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-              <button class="btn-carrito">Agregar al carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class ="ver-mas">
-        <a href="consolas.html" class="btn-ver-mas">Ver más</a>
-      </div>
+    <h1 class="titulo-categoria">CONSOLAS</h1>
+    <div id="contenedorConsolas" class="contenedor-productos"></div>
+    <div class="ver-mas"><a href="consolas.html" class="btn-ver-mas">Ver más</a></div>
   </section>
 </body>
 
+<script src="../JS/index.js"></script>
+
 <footer>
-    <div class="footer">
-      <p>Contacto: 
-        <a href="mailto:pixelshop@email.com"><img src="../assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer">pixelshop@email.com</a> |
-        <a href="https://Whatsapp.com" target="_blank"> <img src="../assets/Iconos/icono-whatsapp.png" alt="WhatsApp" class="icono-footer">Whatsapp</a>
-      <p>Seguinos en 
-        <a href="https://facebook.com" target="_blank"> <img src="../assets/Iconos/icono-facebook.png" alt="Facebook" class="icono-footer">Facebook</a> | 
-        <a href="https://instagram.com" target="_blank"><img src="../assets/Iconos/icono-instagram.png" alt="Instagram" class="icono-footer">Instagram</a>
-        
-      </p>
-      <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  <div class="footer">
+    <p>Contacto: 
+      <a href="mailto:pixelshop@email.com"><img src="../assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer1">pixelshop@email.com</a> |
+      <a href="https://Whatsapp.com" target="_blank"> <img src="../assets/Iconos/icono-whatsapp.png" alt="WhatsApp" class="icono-footer">Whatsapp</a>
+    </p>
+    <p>Seguinos en 
+      <a href="https://facebook.com" target="_blank"> <img src="../assets/Iconos/icono-facebook.png" alt="Facebook" class="icono-footer">Facebook</a> | 
+      <a href="https://instagram.com" target="_blank"><img src="../assets/Iconos/icono-instagram.png" alt="Instagram" class="icono-footer">Instagram</a>
+    </p>
+    <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
+  </div>
+</footer>
 </html>

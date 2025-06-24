@@ -21,11 +21,13 @@
       <!-- BUSCADOR-->
       <form action="resultado.html" method="GET" class="buscador">
         <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
-        <button type="submit">Buscar</button>
+        <button type="submit" class="btn-icono">
+          <img src="../assets/Iconos/icono-buscar.png" alt="Buscar">
+        </button>
       </form>
 
       <!-- CARRITO Y USUARIO -->
-      <nav class="usuario">
+      <nav class="usuario" id="usuario-nav">
         <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
         <a href =""><img src="../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
         <a href="login.html"><img src="../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
@@ -41,62 +43,29 @@
     </div>
   </header>
 
+  <!-- Filtro por categoria -->
+  <!-- Sección: HARDWARE -->
   <section class="contenedor">
     <h1 class="titulo-categoria">HARDWARE</h1>
-      <div class="contenedor-productos">
-      <!-- Producto 1 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Placa-de-video-rtx-3050.png"  alt="RTX-3050" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Placa de video RTX 3050 Ventus 2x Xs 8GB GDDR6</h5>
-          <h6 class="card-subtitle">$383.800,00</h6>
-          <p class="card-text">Ideal para gaming en Full HD, esta GPU ofrece un excelente rendimiento gráfico con arquitectura Ampere y soporte para ray tracing.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div> 
+    <div class="contenido-flex">
+    <!-- Filtro lateral -->
+      <div class="filtros">
+        <h4>Filtrar por categoria</h4>
+        <form id="formFiltroMarca">
+          <label><input type="radio" name="categoria" value="todas" checked> Todas</label>
+          <label><input type="radio" name="categoria" value="Microprocesador"> Microprocesador</label>
+          <label><input type="radio" name="categoria" value="Motherboard"> Motherboard</label>
+          <label><input type="radio" name="categoria" value="Placa de video"> Placa de video</label>
+        </form>
+      </div>  
+    <!-- Contenedor de productos -->
+     <div class="zona-productos">
+      <h2 id="tituloFiltro" style="display: none;"></h2>
+      <div id="contenedorHardware" class="contenido-flex"></div>
       </div>
-
-      <!-- Producto 2 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Micro-IntelI9-14900k.png" alt="Micro-IntelI9-14900k" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Micro Intel I9-14900k 6ghz 36mb s.1700</h5>
-          <h6 class="card-subtitle">$795.700,00</h6>
-          <p class="card-text">Uno de los procesadores más potentes del mercado, perfecto para tareas de alto rendimiento como gaming, diseño y edición profesional.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div> 
-      </div>
-      
-      
-      
-      <!-- Producto 3 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Hardware/Mother-ASUS-PRIME-X870-P-WIFI.png" alt="Mother-ASUS-PRIME-X870-P-WIFI" class="imagen">
-        </div> 
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Mother ASUS PRIME X870-P WIFI DDR5 AM5</h5>
-          <h6 class="card-subtitle">$373.000,00</h6>
-          <p class="card-text">Placa base de última generación con soporte para memorias DDR5, socket AM5 y conectividad WiFi integrada para un setup moderno y veloz.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-  </section>  
-    
+    </div>
+  </section>
 </body>
-
 <footer>
     <div class="footer">
       <p>Contacto: 
@@ -110,4 +79,5 @@
       <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script src="../JS/myscript.js"></script>
   </html>

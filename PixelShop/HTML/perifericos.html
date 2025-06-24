@@ -21,11 +21,13 @@
       <!-- BUSCADOR-->
       <form action="resultado.html" method="GET" class="buscador">
         <input type="search" name="q" placeholder="¿Qué estás buscando?" required /> 
-        <button type="submit">Buscar</button>
+        <button type="submit" class="btn-icono">
+          <img src="../assets/Iconos/icono-buscar.png" alt="Buscar">
+        </button>
       </form>
 
       <!-- CARRITO Y USUARIO -->
-      <nav class="usuario">
+      <nav class="usuario" id="usuario-nav">
         <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
         <a href =""><img src="../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
         <a href="login.html"><img src="../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
@@ -41,61 +43,32 @@
     </div>
   </header>
 
+<!-- Filtro por categoria -->
   <!-- Sección: PERIFÉRICOS -->
   <section class="contenedor">
     <h1 class="titulo-categoria">PERIFÉRICOS</h1>
-    <div class="contenedor-productos">
-      <!-- Tarjeta 1 -->
-      <div class="tarjeta">
-        <div class="imagen-container">
-          <img src="../assets/Productos/Periféricos/Auriculares-Logitech-G432.png" alt="Auriculares-Logitech-G432" class="imagen">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Auriculares Logitech G432 Gaming 7.1 USB</h5>
-          <h6 class="card-subtitle">$107.050,00</h6>
-          <p class="card-text">Auriculares con sonido envolvente 7.1, micrófono ajustable y conexión USB para una experiencia inmersiva en juegos o videollamadas.</p>
-          <div class="producto-footer">
-            <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-            <button class="btn-carrito">Agregar al carrito</button>
-          </div>
-        </div>
-      </div> 
-      
-    <!-- Tarjeta 2 -->
-    <div class="tarjeta">
-      <div class="imagen-container">
-        <img src="../assets/Productos/Periféricos/Mouse-Redragon-STORM-PRO-M808-KS.png" alt="Mouse-Redragon-STORM-PRO-M808-KS" class="imagen">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Mouse Redragon STORM PRO M808-KS RGB Wireless 2.4Ghz</h5>
-        <h6 class="card-subtitle">$40.350,00</h6>
-        <p class="card-text">Mouse inalámbrico de alto rendimiento con sensor de 16.000 DPI, RGB personalizable y diseño ergonómico ultraligero.</p>
-        <div class="producto-footer">
-          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-          <button class="btn-carrito">Agregar al carrito</button>
-        </div>
+    <div class="contenido-flex">
+    <!-- Filtro lateral -->
+      <div class="filtros">
+        <h4>Filtrar por categoria</h4>
+        <form id="formFiltroMarca">
+          <label><input type="radio" name="categoria" value="todas" checked> Todas</label>
+          <label><input type="radio" name="categoria" value="Auriculares"> Auriculares</label>
+          <label><input type="radio" name="categoria" value="Mouse"> Mouse</label>
+          <label><input type="radio" name="categoria" value="Teclado"> Teclado</label>
+          <label><input type="radio" name="categoria" value="Micrófono"> Micrófono</label>
+          <label><input type="radio" name="categoria" value="Webcam"> WebCam</label>
+        </form>
+      </div>  
+    <!-- Contenedor de productos -->
+     <div class="zona-productos">
+      <h2 id="tituloFiltro" style="display: none;"></h2>
+      <div id="contenedorPerifericos" class="contenido-flex"></div>
       </div>
     </div>
-      
-    <!-- Tarjeta 3 -->
-    <div class="tarjeta">
-      <div class="imagen-container">
-        <img src="../assets/Productos/Periféricos/Teclado-Mecanico-Redragon-Kumara-K552.png" alt="Teclado-Mecanico-Redragon-Kumara-K552" class="imagen">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Teclado Mecanico Redragon Kumara K552 RGB Outemu Red</h5>
-        <h6 class="card-subtitle">$46.300,00</h6>
-        <p class="card-text">Teclado compacto con switches Outemu Red, ideal para gamers y programadores que buscan velocidad, durabilidad y estética RGB.</p>
-        <div class="producto-footer">
-          <input type="number" class="cantidad" style="width: 80px;" value="1" min="1">
-          <button class="btn-carrito">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-  
   </section>
-
 </body>
+
 
 <footer>
     <div class="footer">
@@ -110,4 +83,5 @@
       <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script src="../JS/myscript.js"></script>
   </html>
