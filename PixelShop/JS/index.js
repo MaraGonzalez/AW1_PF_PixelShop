@@ -40,7 +40,7 @@ function mostrarTarjetas(lista, contenedorId) {
 }
 
 
-//CARRUSEL
+////////////////////////////////////CARRUSEL////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slides .box");
   const dotsContainer = document.getElementById("dots");
@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+////////////////////////////////////FUNCIONES AGREGAR AL CARRITO////////////////////////////////////
+
 function inicializarBotonesAgregar() {
   const botones = document.querySelectorAll(".btn-carrito");
 
@@ -129,7 +131,7 @@ function handleAgregarCarrito(event) {
     alert(`Se agregó ${cantidad} "${nombre}" al carrito.`);
 }
 
-//Inicio y cerrar sesión
+////////////////////////////////////Inicio y cerrar sesión////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   const navUsuario = document.getElementById("usuario-nav");
 
