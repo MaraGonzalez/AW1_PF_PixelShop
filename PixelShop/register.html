@@ -7,30 +7,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 
     <title>Register - Pixel Shop</title>
 </head>
 
 <body>
-  <div class="register">
-    <a href="index.html"></a><img src="../assets/LogoLogin.png" alt="Pixel Shop Logo" class="logo"></a>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-left">
+        <img src="assets/LogoLogin.png" alt="Pixel Shop Logo" class="logo-login">
+      </div>
 
-    <header>
-      <h1>Registrate</h1>
-    </header>
+    <div class="login-right">
+      <form id="register-form">
+        <h2>Registrate</h2>
 
-    <form id="register-form" action="#" method="post">
-      <label>Nombre: <input type="text" name="nombre" required></label><br>
-      <label>Apellido: <input type="text" name="apellido" required></label><br>
-      <label>Fecha de nacimiento: <input type="date" name="date" required></label><br>
-      <label>Email: <input type="email" name="email" required></label><br>
-      <label>Contraseña: <input type="password" name="password" required></label><br>
-      <button type="submit" class="boton">Confirmar</button>
-      <h3>¿Ya tenés cuenta? <a href="login.html">Iniciá sesión</a></h3>
-    </form>
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="apellido" placeholder="Apellido" required>
+        <input type="date" name="date" id="date" required onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" placeholder="Fecha de nacimiento">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        
+        <div class="login-row right-align">
+          <button type="submit" class="boton">Confirmar</button>
+        </div>
+
+        <div class="form-links">
+            <a href="login.html">¿Ya tenés cuenta? Ingresá</a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-
 
   <script>
     document.getElementById("register-form").addEventListener("submit", function(e) {
@@ -63,7 +72,7 @@
     apellido,
     fecha,
     email,
-    password // NOTA: en una app real, nunca guardes contraseñas en texto plano
+    password // NOTA: en una app real, nunca guardar contraseñas en texto plano
   });
 
   sessionStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -71,6 +80,7 @@
   alert("Registro exitoso! Ahora podés iniciar sesión.");
   window.location.href = "login.html"; // redirigir a login
 });
+
   </script>
 </body>
 </html>
