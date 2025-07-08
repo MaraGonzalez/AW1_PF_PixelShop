@@ -292,6 +292,13 @@ footer a:hover {
     padding: 20px 0;
     align-items: center;
 }
+
+.contenido-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
   
 /*************** Tarjeta individual ***************/
 .tarjeta {
@@ -579,6 +586,14 @@ input[type="date"]:not(:focus):invalid::before {
   opacity: 0.7;
 }
 
+input[type="date"]::before {
+  color: #D8E6F2;
+  content: attr(placeholder) ": ";
+  margin-right: 0.5em;
+}
+input[type="date"]:focus::before {
+  content: "" !important;
+}
 
 /************** ESTILO PRODUCTO POR PAGINA **************/
 
@@ -827,3 +842,27 @@ form fieldset.campo-pequeno {
   font-size: 18px;
 }
 
+
+
+
+
+
+.filtros {
+  width: 250px;
+  min-width: 200px;
+  padding: 20px;
+  color: #D8E6F2;
+  font-size: 20px;
+  font-family: 'Jersey 10', cursive;
+}
+.filtros h4 {
+  margin-bottom: 15px;
+}
+.filtros label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.zona-productos {
+  flex: 1;
+}
