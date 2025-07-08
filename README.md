@@ -9,5 +9,6 @@
 **JavaScript:** Lenguaje principal para agregar interactividad.   
 **JSON:** Utilizada para almacenar y organizar todos los productos del catálogo.   
 
-   
+**Roadmap: **      
 **Link: https://pixelshop-five.vercel.app/**
+**Video:  **   
