@@ -443,7 +443,7 @@ footer a:hover {
 
 
 
-/*******************************************login.html*******************************************/
+/*******************************************login.html & register.html*******************************************/
 /*************** Contenedor principal de la página ***************/
 
 .login-wrapper {
@@ -507,8 +507,11 @@ footer a:hover {
   align-items: center;
 }
 
+/*************** Inputs ***************/
 .login-right input[type="email"],
-.login-right input[type="password"] {
+.login-right input[type="password"],
+.login-right input[type="text"],
+.login-right input[type="date"] {
   width: 90%;
   padding: 12px;
   font-size: 18px;
@@ -528,6 +531,7 @@ footer a:hover {
   margin-top: 10px;
   flex-wrap: wrap;
 }
+
 
 .login-row .checkbox-label {
   display: flex;
@@ -569,97 +573,11 @@ footer a:hover {
     background-color: #A64170;
 }
 
-
-
-/*******************************************register.html*******************************************/
-/*************** Contenedor principal de la página ***************/
-.register {
-    background-color: #2F3B42;
-    padding: 30px;
-    margin: 40px auto;
-    width: 400px;
-    border: 2px solid #A62139;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(236, 3, 129, 0.5);
+input[type="date"]:not(:focus):invalid::before {
+  content: attr(placeholder);
+  color: #D8E6F2;
+  opacity: 0.7;
 }
-
-/*************** Inputs del formulario ***************/
-.register input[type="text"],
-.register input[type="email"],
-.register input[type="password"],
-.register input[type="date"] {
-    width: 90%;
-    padding: 10px;
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    background-color: #A62139;
-    border: 2px solid #D8E6F2;
-    border-radius: 8px;
-    color: white;
-    font-family: 'Jersey 10', cursive;
-}
-
-/*************** Título ***************/
-.register h1 {
-    color: #A64170;
-    font-size: 40px;
-    margin-bottom: 20px;
-    font-family: 'Jersey 10', cursive;
-}
-
-
-/*************** FILTROS***************/
-.contenido-flex {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 20px;
-}
-
-.filtros {
-  width: 300px;
-  background-color: #2F3B42; 
-  padding: 10px;
-  color: white;
-}
-
-
-.filtros label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.filtros input[type="radio"] {
-  margin-right: 8px;
-  accent-color: #A64170;
-  transform: scale(1.1);
-}
-
-.zona-productos{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#tituloFiltro {
-  font-size: 40px;
-  color: #A64170;
-  margin-top: 20px;
-  text-align: left;
-}
-
-
-.contenido-flex {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
 
 
 /************** ESTILO PRODUCTO POR PAGINA **************/
