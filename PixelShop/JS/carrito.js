@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mostrar el modal de pago
-    document.getElementById("modalPago").style.display = "block";
+    document.getElementById("modalPago").style.display = "flex";
   });
 
   // Eventos de botones del modal
