@@ -800,79 +800,6 @@ form fieldset.campo-pequeno {
 }
 
 
-
-/********************** checkout **********************/
-
-
-.wrapper {
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.confirmacion h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #ec0381;
-}
-
-.confirmacion p {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.confirmacion {
-   background-color: #2f3b42;
-  padding: 40px;
-  border-radius: 15px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  color: white;
-  text-align: center;
-}
-
-.confirmacion a {
-  display: inline-block;
-  margin-top: 20px;
-  color: #ec0381;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-
-
-
-
-
-.filtros {
-  width: 250px;
-  min-width: 200px;
-  padding: 20px;
-  color: #D8E6F2;
-  font-size: 20px;
-  font-family: 'Jersey 10', cursive;
-}
-.filtros h4 {
-  margin-bottom: 15px;
-}
-.filtros label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.zona-productos {
-  flex: 1;
-}
-
-
-
-
-
-
-
 .modal {
   display: none; 
   position: fixed;
@@ -924,3 +851,81 @@ form fieldset.campo-pequeno {
 .btn-cancelar:hover {
   background-color: #ec0381; 
 }
+
+/********************** checkout **********************/
+
+
+.wrapper {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmacion h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #A62139;
+}
+
+.confirmacion p {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.confirmacion {
+   background-color: #2f3b42;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+}
+
+.confirmacion a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #A62139;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.confirmacion a:hover {
+  color: #ec0381;
+  text-decoration: underline; 
+}
+
+
+
+
+/********************************************/
+
+.filtros {
+  width: 250px;
+  min-width: 200px;
+  padding: 20px;
+  color: #D8E6F2;
+  font-size: 20px;
+  font-family: 'Jersey 10', cursive;
+}
+.filtros h4 {
+  margin-bottom: 15px;
+}
+.filtros label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.zona-productos {
+  flex: 1;
+}
+
+
+
+
+
+
+
