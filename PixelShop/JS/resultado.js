@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }); 
   inicializarBotonesAgregar();
 }
-});
 
 function inicializarBotonesAgregar() {
   const botones = document.querySelectorAll(".btn-carrito");
@@ -80,8 +79,8 @@ function inicializarBotonesAgregar() {
       const tarjeta = boton.closest(".tarjeta");
       const id = boton.dataset.id;
       const nombre = tarjeta.querySelector(".card-title").textContent;
-      const precioStr = tarjeta.querySelector(".card-subtitle").textContent.replace(/[^\d]/g, "");
-      const precio = Number(precioStr);
+      const precioStr = tarjeta.querySelector(".card-subtitle").textContent.replace(/[^0-9.,]/g, "").replace(",", ".");
+      const precio = parseFloat(precioStr);
       const cantidadInput = tarjeta.querySelector(".cantidad");
       const cantidad = Number(cantidadInput.value) || 1;
       const imagen = tarjeta.querySelector("img.imagen").src;
@@ -100,41 +99,33 @@ function inicializarBotonesAgregar() {
       localStorage.setItem("carrito", JSON.stringify(carrito));
 
       alert(`Se agregó ${cantidad} "${nombre}" al carrito.`);
-    });
-  });
-}
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const navUsuario = document.getElementById("usuario-nav");
-
-    // Verifica si hay una sesión activa
-    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
-
-    if (usuario) {
-      // Si está logueado, mostrar opciones completas
-      navUsuario.innerHTML = `
-        <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
-        <a href="cuenta.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Mi cuenta" class="icono">Mi cuenta</a>
-        <a href="#" id="cerrar-sesion"><img src="../assets/Iconos/icono-cerrarsesion.png" alt="Cerrar sesión" class="icono">Cerrar sesión</a>
-        `;
-
-      // Cerrar sesión
-      document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
-        e.preventDefault();
-        sessionStorage.removeItem("usuario");
-        location.reload();
       });
+    });
+  }
 
-    } else {
-      // Si no está logueado, mostrar login y registro
-      navUsuario.innerHTML = `
-        <a href="login.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Login" class="icono">Iniciar sesión</a>
-        <a href="register.html"><img src="../assets/Iconos/icono-cerrarsesion.png" alt="Registro" class="icono">Registrar cuenta</a>
-        `;
+const navUsuario = document.getElementById("usuario-nav");
+    // Verifica si hay una sesión activa
+const usuario = JSON.parse(sessionStorage.getItem("usuario"));
 
-    }
-  });
+if (usuario) {
+// Si está logueado, mostrar opciones completas
+  navUsuario.innerHTML = `
+    <a href="carrito.html"><img src="../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+    <a href="cuenta.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Mi cuenta" class="icono">Mi cuenta</a>
+    <a href="#" id="cerrar-sesion"><img src="../assets/Iconos/icono-cerrarsesion.png" alt="Cerrar sesión" class="icono">Cerrar sesión</a>
+  `;
+
+  // Cerrar sesión
+  document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem("usuario");
+    location.reload();
+    });
+  } else {
+  // Si no está logueado, mostrar login y registro
+    navUsuario.innerHTML = `
+      <a href="login.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Login" class="icono">Iniciar sesión</a>
+      <a href="register.html"><img src="../assets/Iconos/icono-cerrarsesion.png" alt="Registro" class="icono">Registrar cuenta</a>
+    `;
+  }
+});

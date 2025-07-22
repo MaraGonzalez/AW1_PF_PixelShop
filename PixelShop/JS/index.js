@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
       navUsuario.innerHTML = `
-        <a href="login.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Login" class="icono">Ingresar</a>
+        <a href="login.html"><img src="../assets/Iconos/icono-micuenta.png" alt="Login" class="icono">Iniciar sesión</a>
         <a href="register.html"><img src="../assets/Iconos/icono-cerrarsesion.png" alt="Registro" class="icono">Crear cuenta</a>
       `;
     }

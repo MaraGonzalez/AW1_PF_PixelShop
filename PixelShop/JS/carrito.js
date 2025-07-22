@@ -96,6 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   btnFinalizar.addEventListener("click", () => {
+    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+    
+    if (!usuario) {
+      alert("Debes iniciar sesión para finalizar la compra.");
+      window.location.href = "login.html";
+      return;
+    }
+    
     if (carrito.length === 0) {
       alert("Carrito vacío");
       return;
