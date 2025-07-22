@@ -1,9 +1,9 @@
 # AW1_PF_PixelShop
 ## Repositorio para la materia Aplicación Web 1 de IES21 - Proyecto Integrador Final   
-## Alumna: Gonzalez, Mara   
+### Alumna: Gonzalez, Mara   
    
    
-### Tecnología utilizadas:   
+## Tecnología utilizadas:   
 **HTML5:** Utilizado para la creación de las páginas del sitio.   
 **CSS3:** Se utilizó para aplicar estilos personalizados con una estética moderna.   
 **JavaScript:** Lenguaje principal para agregar interactividad.   
@@ -35,6 +35,8 @@
 - Cambio en la estructura de carpetas para organizar mejor los html por categoría (dejando los principales en la raíz).
 - Ajuste en las rutas.  
 - Revisión del código en funcionamiento.  
-    
-**Link: https://pixelshop-five.vercel.app/**   
-**Video:**   
+
+### Link  
+**https://pixelshop-five.vercel.app/**   
+### Video  
+**Video**   
