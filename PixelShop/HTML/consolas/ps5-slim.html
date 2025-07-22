@@ -16,11 +16,11 @@
   <header>
     <!-- LOGO -->
     <div class="top">
-      <a href="../../HTML/index.html"><img src="../../assets/LogoIndex.png" alt="Pixel Shop" class="logo"></a>
+      <a href="../../index.html"><img src="../../assets/LogoIndex.png" alt="Pixel Shop" class="logo"></a>
      
       <!-- BUSCADOR-->
-      <form action="resultado.html" method="GET" class="buscador">
-        <input type="search" name="q" placeholder="¿Qué estás buscando?" required />
+      <form action="../../resultado.html" method="GET" class="buscador">
+        <input type="search" name="q" placeholder="¿Qué estás buscando?" required>
         <button type="submit" class="btn-icono">
           <img src="../../assets/Iconos/icono-buscar.png" alt="Buscar">
         </button>
@@ -28,51 +28,48 @@
 
       <!-- CARRITO Y USUARIO -->
       <nav class="usuario" id="usuario-nav">
-        <a href="../carrito.html"><img src="../../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
-        <a href =""><img src="../../assets/Iconos/icono-micuenta.png"alt="Carrito" class="icono">Mi cuenta</a> 
-        <a href="../login.html"><img src="../../assets/Iconos/icono-cerrarsesion.png"alt="Carrito" class="icono">Cerrar sesión</a> 
+        <a href="../../carrito.html"><img src="../../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+        <a href =""><img src="../../assets/Iconos/icono-micuenta.png" alt="Carrito" class="icono">Mi cuenta</a> 
+        <a href="../../login.html"><img src="../../assets/Iconos/icono-cerrarsesion.png" alt="Carrito" class="icono">Cerrar sesión</a> 
       </nav>
     </div>
 
     <!-- BARRA MENU -->
     <div class="menu">
-      <a href="../pcarmadas.html">COMPUTADORAS ARMADAS</a>
-      <a href="../hardware.html">HARDWARE</a>
-      <a href="../perifericos.html">PERIFÉRICOS</a>
-      <a href="../consolas.html">CONSOLAS</a>
+      <a href="../../pcarmadas.html">COMPUTADORAS ARMADAS</a>
+      <a href="../../hardware.html">HARDWARE</a>
+      <a href="../../perifericos.html">PERIFÉRICOS</a>
+      <a href="../../consolas.html">CONSOLAS</a>
     </div>
   </header>
 
-    <div class="producto-container">
+  <div class="producto-container">
         <!-- IMAGEN-->
-        <div class="imagen-producto">
-        <img src="/../assets/Productos/Consolas/PS5-Slim.png" alt="PS5-Slim" />
-        </div>
-
-        <!-- DETALLES -->
-        <div class="detalle-producto">
-        <h1>Sony Playstation 5 Slim 1TB Digital + Joystick</h1>
-        <div class="subtitulo-producto">Descripción</div>
-        <ul>
-            <li>Almacenamiento: SSD de 1 TB</li>
-            <li>Diseño: Slim, más compacto y liviano</li>
-            <li>Unidad óptica: No (versión digital)</li>
-            <li>Incluye: Joystick inalámbrico DualSense</li>
-            <li>Conectividad: Wi-Fi, Bluetooth, USB-C</li>
-        </ul>
-
-        <div class="precio">$1.540.000</div>
-
-        <div class="producto-footer-unid">
-            <input type="number" min="1" value="1" />
-            <button>Agregar al carrito</button>
-        </div>
-        </div>
+    <div class="imagen-producto">
+    <img src="/../assets/Productos/Consolas/PS5-Slim.png" alt="PS5-Slim">
     </div>
-</body>
-<script src="../../JS/producto.js"></script>
 
-<footer>
+    <!-- DETALLES -->
+    <div class="detalle-producto">
+      <h1>Sony Playstation 5 Slim 1TB Digital + Joystick</h1>
+      <div class="subtitulo-producto">Descripción</div>
+      <ul>
+        <li>Almacenamiento: SSD de 1 TB</li>
+        <li>Diseño: Slim, más compacto y liviano</li>
+        <li>Unidad óptica: No (versión digital)</li>
+        <li>Incluye: Joystick inalámbrico DualSense</li>
+        <li>Conectividad: Wi-Fi, Bluetooth, USB-C</li>
+      </ul>
+
+      <div class="precio">$1.540.000</div>
+
+      <div class="producto-footer-unid">
+        <input type="number" min="1" value="1">
+        <button>Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+  <footer>
     <div class="footer">
       <p>Contacto: 
         <a href="mailto:pixelshop@email.com"><img src="../../assets/Iconos/icono-correo.png" alt="WhatsApp" class="icono-footer1">pixelshop@email.com</a> |
@@ -84,5 +81,7 @@
       </p>
       <p>© 2025 Pixel Shop. Todos los derechos reservados.</p>
     </div>
-</footer>
+  </footer>
+  <script src="../../JS/producto.js"></script>
+</body>
 </html>
