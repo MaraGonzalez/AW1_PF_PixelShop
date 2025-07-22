@@ -5,65 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalDiv = document.getElementById("total");
   const btnVaciar = document.getElementById("btn-vaciar");
   const btnFinalizar = document.getElementById("btn-finalizar");
+  const envioContenedor = document.getElementById("envio-contenedor");
 
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  function mostrarCarrito() {
-    const envioContenedor = document.getElementById("envio-contenedor");
-
-    if (carrito.length === 0) {
-        tablaCarrito.style.display = "none";
-        carritoVacio.style.display = "block";
-        totalDiv.textContent = "";
-        if (envioContenedor) envioContenedor.style.display = "none";
-        return;
+  function calcularEnvio() {
+    const metodo = document.querySelector("input[name='envio']:checked")?.value;
+    switch (metodo) {
+      case "correo": return 79000;
+      case "oca": return 75000;
+      case "andreani": return 85000;
+      default: return 0;
     }
-
-    tablaCarrito.style.display = "table";
-    carritoVacio.style.display = "none";
-    if (envioContenedor) envioContenedor.style.display = "block";
-
-    carrito.forEach((producto, index) => {
-        const subtotal = producto.precio * producto.cantidad;
-        const fila = document.createElement("tr");
-
-        fila.innerHTML = `
-        <td>
-          <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 50px; height: auto; margin-right: 10px;">
-          ${producto.nombre}
-        </td>
-        <td>$${producto.precio.toLocaleString()}</td>
-        <td><input type="number" min="1" value="${producto.cantidad}" data-index="${index}" class="input-cantidad" style="width: 60px;"></td>
-        <td>$${subtotal.toLocaleString()}</td>
-        <td><button class="btn btn-danger btn-sm btn-eliminar" data-index="${index}">Eliminar</button></td>
-      `;
-
-        carritoBody.appendChild(fila);
-    });
-
-    actualizarTotal();
-    agregarEventosCantidadEliminar();
   }
 
   function calcularTotalConEnvio() {
-    const totalProductos = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
-
-    const metodo = document.querySelector("input[name='envio']:checked")?.value;
-
-    let costoEnvio = 0;
-    switch (metodo) {
-      case "correo":
-        costoEnvio = 79000;
-        break;
-      case "oca":
-        costoEnvio = 75000;
-        break;
-      case "andreani":
-        costoEnvio = 85000;
-        break;
-    }
-
-    return totalProductos + costoEnvio;
+    const totalProductos = carrito.reduce(
+      (acc, p) => acc + p.precio * p.cantidad,
+      0
+    );
+    return totalProductos + calcularEnvio();
   }
 
   function actualizarTotal() {
@@ -71,32 +32,60 @@ document.addEventListener("DOMContentLoaded", () => {
     totalDiv.textContent = `Total con envío: $${total.toLocaleString()}`;
   }
 
-  function agregarEventosCantidadEliminar() {
-    // Cambiar cantidad
-    const inputsCantidad = document.querySelectorAll(".input-cantidad");
-    inputsCantidad.forEach(input => {
-      input.addEventListener("change", (e) => {
+  function mostrarCarrito() {
+    carritoBody.innerHTML = "";
+
+    if (carrito.length === 0) {
+      tablaCarrito.style.display = "none";
+      carritoVacio.style.display = "block";
+      envioContenedor.style.display = "none";
+      totalDiv.textContent = "";
+      return;
+    }
+
+    tablaCarrito.style.display = "table";
+    carritoVacio.style.display = "none";
+    envioContenedor.style.display = "block";
+
+    carrito.forEach((producto, index) => {
+      const subtotal = producto.precio * producto.cantidad;
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td><img src="${producto.imagen}" alt="${producto.nombre}" style="width: 50px;"> ${producto.nombre}</td>
+        <td>$${producto.precio.toLocaleString()}</td>
+        <td><input type="number" min="1" value="${producto.cantidad}" data-index="${index}" class="input-cantidad"></td>
+        <td>$${subtotal.toLocaleString()}</td>
+        <td><button class="btn btn-danger btn-sm btn-eliminar" data-index="${index}">Eliminar</button></td>
+      `;
+      carritoBody.appendChild(fila);
+    });
+
+    actualizarTotal();
+    agregarEventos();
+  }
+
+  function agregarEventos() {
+    document.querySelectorAll(".input-cantidad").forEach(input => {
+      input.addEventListener("change", e => {
         const index = e.target.dataset.index;
         let nuevaCantidad = parseInt(e.target.value);
-        if (isNaN(nuevaCantidad) || nuevaCantidad < 1) {
-          nuevaCantidad = 1;
-          e.target.value = 1;
-        }
+        if (isNaN(nuevaCantidad) || nuevaCantidad < 1) nuevaCantidad = 1;
         carrito[index].cantidad = nuevaCantidad;
         localStorage.setItem("carrito", JSON.stringify(carrito));
         mostrarCarrito();
       });
     });
 
-    // Eliminar producto
-    const btnsEliminar = document.querySelectorAll(".btn-eliminar");
-    btnsEliminar.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        const index = e.target.dataset.index;
-        carrito.splice(index, 1);
+    document.querySelectorAll(".btn-eliminar").forEach(btn => {
+      btn.addEventListener("click", e => {
+        carrito.splice(e.target.dataset.index, 1);
         localStorage.setItem("carrito", JSON.stringify(carrito));
         mostrarCarrito();
       });
+    });
+
+    document.querySelectorAll("input[name='envio']").forEach(radio => {
+      radio.addEventListener("change", actualizarTotal);
     });
   }
 
@@ -108,54 +97,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnFinalizar.addEventListener("click", () => {
     if (carrito.length === 0) {
-      alert("Tu carrito está vacío.");
+      alert("Carrito vacío");
       return;
     }
 
-    fetch('https://fakestoreapi.com/carts', {
-    method: "POST",
-    body: JSON.stringify({
-      userId: 1,
-      date: new Date().toISOString(),
-      products: carrito.map(item => ({
-        productId: item.id,
-        quantity: item.cantidad
-      }))
-    }),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(res => res.json())
-  .then(json => {
-    console.log("Simulación de orden enviada:", json);
-    // Vaciar carrito
-    carrito = [];
-    localStorage.removeItem("carrito");
-    // Redirigir al checkout de simulación
-    window.location.href = "checkout.html";
+    // Mostrar el modal de pago
+    document.getElementById("modalPago").style.display = "block";
   });
-});
 
-  // Escuchar cambios en el método de envío
-  const radiosEnvio = document.querySelectorAll("input[name='envio']");
-  radiosEnvio.forEach(radio => {
-    radio.addEventListener("change", () => {
-      actualizarTotal();
-    });
+  // Eventos de botones del modal
+  document.querySelector(".btn-transferencia")?.addEventListener("click", () => {
+    pagoExitoso("Transferencia");
+  });
+
+  document.querySelector(".btn-debito")?.addEventListener("click", () => {
+    pagoExitoso("Tarjeta de débito");
+  });
+
+  document.querySelector(".btn-credito")?.addEventListener("click", () => {
+    pagoExitoso("Tarjeta de crédito");
+  });
+
+  document.querySelector(".btn-cancelar")?.addEventListener("click", () => {
+    cerrarModal();
   });
 
   mostrarCarrito();
 });
 
-const mp = new MercadoPago("TU_PUBLIC_KEY_DE_TEST", {
-  locale: "es-AR"
-});
+// Función para simular el pago
+function pagoExitoso(metodo) {
+  alert(`Pago simulado con ${metodo}! Gracias por tu compra.`);
+  localStorage.removeItem("carrito");
+  window.location.href = "checkout.html";
+}
 
-const checkout = mp.checkout({
-  preference: {
-    id: "TU_ID_DE_PREFERENCIA"
-  },
-  autoOpen: true,
-});
-
+// Cerrar el modal
+function cerrarModal() {
+  const modal = document.getElementById("modalPago");
+  modal.style.display = "none";
+}
