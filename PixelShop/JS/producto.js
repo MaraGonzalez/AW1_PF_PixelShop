@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (usuario) {
     navUsuario.innerHTML = `
-      <a href="../carrito.htmlcarrito.html"><img src="../../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
-      <a href="../cuenta.html"><img src="../../assets/Iconos/icono-micuenta.png" alt="Mi cuenta" class="icono">Mi cuenta</a>
+      <a href="../../carrito.html"><img src="../../assets/Iconos/icono-carrito.png" alt="Carrito" class="icono">Carrito</a>
+      <a href="../../cuenta.html"><img src="../../assets/Iconos/icono-micuenta.png" alt="Mi cuenta" class="icono">Mi cuenta</a>
       <a href="#" id="cerrar-sesion"><img src="../../assets/Iconos/icono-cerrarsesion.png" alt="Cerrar sesión" class="icono">Cerrar sesión</a>
     `;
 
