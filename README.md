@@ -38,5 +38,3 @@
 
 ### Link  
 **https://pixelshop-five.vercel.app/**   
-### Video  
-**https://drive.google.com/file/d/1sGi2nMgJm7VxJYxifqlFfQpFCgeNmqTc/view?usp=sharing**   
